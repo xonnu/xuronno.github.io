@@ -3,14 +3,14 @@
     align-items: center;
     column-gap: rem(16);
     text-align: center;
-    inline-size: auto;
+    inline-size: fit-content !important;
     min-inline-size: rem(50);
     border: 1px solid var(--light-black-1);
     background-color: var(--light-black-1);
     padding: rem(10) rem(16);
     border-radius: rem(3);
     font-size: rem(16);
-    font-weight: 600;
+    font-weight: 700;
     color: var(--color-black-1);
     transition: all 150ms linear;
 

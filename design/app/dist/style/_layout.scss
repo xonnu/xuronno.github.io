@@ -1,0 +1,99 @@
+section {
+    block-size: auto;
+    position: relative;
+    inline-size: 100%;
+    block-size: 100%;
+    min-block-size: rem(600);
+}
+
+.max-width {
+    max-inline-size: rem(980);
+    inline-size: 100%;
+    margin: rem(0) auto;
+    padding: 0 rem(16);
+
+    @include device(M) {
+        padding: 0 rem(20);
+    }
+}
+
+.min-height {
+    block-size: auto;
+    min-block-size: rem(600);
+}
+
+
+.headline {
+    font-weight: 700;
+    color: var(--color-black-1);
+    font-size: rem(40);
+    line-height: rem(45);
+
+    @include device(M) {
+        line-height: rem(80);
+        font-size: rem(70);
+    }
+
+    &-sub {
+        color: var(--color-black-5);
+        font-size: rem(19);
+        font-weight: 500;
+    }
+}
+
+.hero {
+    &__section {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        block-size: auto;
+        min-block-size: inherit;
+
+        @include device(M) {
+            min-block-size: inherit;
+        }
+
+        &--color {
+            position: relative;
+            block-size: auto;
+            background-color: var(--white-color);
+            min-block-size: rem(400);
+
+            @include device(M) {
+                min-block-size: rem(600);
+            }
+        }
+    }
+
+    &__content {
+        inline-size: 90%;
+
+        @include device(S) {
+            inline-size: 100%;
+        }
+
+        @include device(M) {
+            inline-size: 80%;
+            margin-top: 0;
+        }
+
+        h2 {
+            margin: rem(10) 0 rem(20) 0;
+
+            @include device(M) {
+                margin: rem(16) 0 rem(30) 0;
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        inline-size: 100%;
+
+        a {
+            &:not(:last-child) {
+                margin-right: rem(16);
+            }
+        }
+    }
+}

@@ -5,16 +5,17 @@
     margin: 0;
     box-sizing: border-box;
     font-size: 100%;
+    // outline: rem(1) solid hsla(0, 100%, 50%, 0.09);
 }
 
 /* Customer Properties */
 :root {
     /* light dark colors */
-    --light-black-1: #{$light-black-1};
-    --light-black-2: #{$light-black-2};
+    --light-black-1: #{$light-black-1}; // Button
+    --light-black-2: #{$light-black-2}; // Border
     /* color blacks  */
-    --color-black-1: #{$color-black-1};
-    --color-black-2: #{$color-black-2};
+    --color-black-1: #{$color-black-1}; // Headline
+    --color-black-2: #{$color-black-2}; // Paragraph
     --color-black-3: #{$color-black-3};
     --color-black-4: #{$color-black-4};
     --color-black-5: #{$color-black-5};
@@ -23,6 +24,10 @@
     --white-color: #{$white-color};
     /* Font family */
     --font-family-1: #{$font-family-1};
+}
+
+::selection {
+    background-color: var(--light-black-1);
 }
 
 html {
@@ -34,6 +39,7 @@ html,
 body {
     block-size: 100%;
     inline-size: 100%;
+    outline-color: transparent;
 }
 
 button,
@@ -42,7 +48,13 @@ textarea {
     font-family: var(--font-family-1) !important;
     font: inherit;
     border: 0;
-    font-size: rem(14);
+    font-size: rem(16);
+}
+
+a,
+p,
+button {
+    letter-spacing: rem(0.2);
 }
 
 a {

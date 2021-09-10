@@ -1,0 +1,125 @@
+nav {
+    background-color: var(--white-color);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    block-size: rem(70);
+
+    @include device(M) {
+        block-size: rem(80);
+    }
+
+    &__logo {
+        margin-right: auto;
+
+        a {
+            display: grid;
+            place-items: center;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                border-radius: 100%;
+                opacity: 0;
+                border: rem(2) solid var(--color-black-1);
+                inline-size: 100%;
+                block-size: 100%;
+                transform: scale(1);
+                transition: all 150ms linear;
+                transition-property: transform, opacity;
+            }
+
+            &:hover {
+                &::before {
+                    opacity: 1;
+                    transform: scale(1.3);
+                }
+            }
+        }
+
+        img {
+            max-inline-size: rem(38);
+            max-block-size: rem(38);
+            inline-size: 100%;
+            block-size: 100%;
+        }
+    }
+
+    &__links {
+        visibility: hidden;
+        opacity: 0;
+
+        @include device(M) {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .active {
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: rem(-5);
+                left: 0;
+                background-color: var(--color-black-1);
+                inline-size: 100%;
+                block-size: rem(3);
+                transition: 100ms inline-size linear;
+            }
+        }
+
+        ul {
+            li {
+                display: inline-block;
+
+                &:not(:last-child) {
+                    margin-right: rem(24);
+                }
+
+                a {
+                    position: relative;
+                    font-weight: 600;
+                    color: var(--color-black-1);
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: rem(-5);
+                        left: 0;
+                        background-color: var(--color-black-1);
+                        inline-size: 0%;
+                        block-size: rem(3);
+                        transition: 100ms inline-size linear;
+                    }
+
+                    &:hover {
+
+                        &::before {
+                            inline-size: 80%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__menu-button {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+
+        @include device(M) {
+            display: none;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .button {
+            padding: rem(8) rem(16);
+        }
+    }
+}

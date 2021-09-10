@@ -1,0 +1,61 @@
+.button {
+    display: flex;
+    align-items: center;
+    column-gap: rem(16);
+    text-align: center;
+    inline-size: auto;
+    min-inline-size: rem(50);
+    border: 1px solid var(--light-black-1);
+    background-color: var(--light-black-1);
+    padding: rem(10) rem(16);
+    border-radius: rem(3);
+    font-size: rem(16);
+    font-weight: 600;
+    color: var(--color-black-1);
+    transition: all 150ms linear;
+
+    @include device(S) {
+        font-size: rem(14);
+    }
+
+    &-2 {
+        border: 1px solid var(--light-black-2);
+        background-color: var(--white-color);
+    }
+
+    &--icon {
+        position: relative;
+        inline-size: 100%;
+        block-size: 100%;
+        max-inline-size: rem(21);
+        max-block-size: rem(21);
+        animation-name: upDown;
+        animation-duration: 500ms;
+        animation-timing-function: ease-out;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+        animation-play-state: running;
+
+        @keyframes upDown {
+            0% {
+                top: rem(5);
+            }
+
+            100% {
+                top: 0;
+            }
+        }
+    }
+
+
+
+    &:hover {
+        background-color: var(--color-black-1);
+        color: var(--white-color);
+        border-color: var(--color-black-1);
+
+        .button--icon {
+            filter: invert(100%);
+        }
+    }
+}

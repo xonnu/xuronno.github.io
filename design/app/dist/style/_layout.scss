@@ -7,11 +7,7 @@ section {
 }
 
 body {
-    padding: 0 rem(16);
-
-    @include device(M) {
-        padding: 0 rem(20);
-    }
+    padding: 0 rem(24);
 }
 
 .max-width {
@@ -27,15 +23,16 @@ body {
 
 
 .headline {
+    display: block;
     font-weight: 700;
     color: var(--color-black-1);
     font-size: rem(40);
     line-height: rem(45);
-    transition: all 300ms ease-in-out;
+    transition: all 500ms ease-in-out;
 
     @include device(S) {
-        font-size: rem(30);
-        line-height: rem(35);
+        font-size: rem(40);
+        line-height: rem(45);
     }
 
     @include device(M) {
@@ -55,11 +52,11 @@ body {
 
     &-sub {
         color: var(--color-black-5);
-        font-size: rem(16);
+        font-size: rem(18);
         font-weight: 500;
 
         @include device(S) {
-            font-size: rem(14);
+            font-size: rem(18);
         }
 
         @include device(M) {
@@ -85,6 +82,10 @@ body {
             block-size: auto;
             background-color: var(--white-color);
             min-block-size: rem(400);
+
+            @include device(S) {
+                min-block-size: rem(500);
+            }
 
             @include device(M) {
                 min-block-size: rem(600);

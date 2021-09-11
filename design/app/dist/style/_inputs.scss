@@ -9,13 +9,13 @@
     background-color: var(--light-black-1);
     padding: rem(10) rem(16);
     border-radius: rem(3);
-    font-size: rem(16);
+    font-size: rem(15);
     font-weight: 700;
     color: var(--color-black-1);
     transition: all 150ms linear;
 
     @include device(S) {
-        font-size: rem(14);
+        font-size: rem(15);
     }
 
     &-2 {

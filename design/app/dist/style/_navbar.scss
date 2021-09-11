@@ -17,18 +17,24 @@ nav {
         margin-right: auto;
 
         a {
-            display: grid;
-            place-items: center;
             position: relative;
+
+            picture {
+                display: grid;
+                place-items: center;
+                position: relative;
+            }
 
             &::before {
                 content: '';
                 position: absolute;
                 border-radius: 100%;
+                top: 0;
+                left: 0;
                 opacity: 0;
                 border: rem(2) solid var(--color-black-1);
-                inline-size: 100%;
-                block-size: 100%;
+                inline-size: rem(38);
+                block-size: rem(38);
                 transform: scale(1);
                 transition: all 150ms linear;
                 transition-property: transform, opacity;
@@ -45,8 +51,8 @@ nav {
         img {
             max-inline-size: rem(38);
             max-block-size: rem(38);
-            inline-size: 100%;
-            block-size: 100%;
+            inline-size: rem(38);
+            block-size: rem(38);
         }
     }
 
@@ -100,6 +106,85 @@ nav {
 
                         &::before {
                             inline-size: 80%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__mobile {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        block-size: 100vh;
+        background-color: var(--white-color);
+        padding: rem(16);
+        opacity: 0;
+        visibility: hidden;
+        inline-size: 100%;
+
+        @include device(M) {
+            right: 0;
+            left: auto;
+            inline-size: 50%;
+        }
+
+        &--open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &__container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            block-size: 100%;
+
+            .active {
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background-color: var(--color-black-1);
+                    inline-size: 70%;
+                    block-size: rem(4);
+                    transition: 250ms inline-size linear;
+                }
+            }
+
+            ul li {
+                display: block;
+                inline-size: 100%;
+
+                &:not(:last-child) {
+                    margin-bottom: rem(16);
+                }
+
+                a {
+                    position: relative;
+                    display: block;
+                    font-size: rem(30);
+                    font-weight: 700;
+                    color: var(--color-black-2);
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        bottom: rem(-5);
+                        left: 0;
+                        background-color: var(--color-black-1);
+                        inline-size: 0%;
+                        block-size: rem(4);
+                        transition: 250ms inline-size linear;
+                    }
+
+                    &:hover {
+
+                        &::before {
+                            inline-size: 50%;
                         }
                     }
                 }

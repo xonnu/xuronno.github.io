@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title> Justin Raniel Pascual, Visual Designer </title>
     <meta charset="UTF-8">
@@ -10,16 +11,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    
+
     <nav>
         <div class="navbar max-width">
             <div class="navbar__logo">
                 <a href="/index.html" aria-label="Home button">
-                    <img src="app/dist/assets/logo/logo.png" alt="Justin Pascual photo">
+                    <picture>
+                        <source type="image/webp"
+                            srcset="app/dist/assets/logo/logo-480.webp 480w, 
+                                    app/dist/assets/logo/logo-790.webp 790w">
+                        <source media="(max-width: 480px)" srcset="app/dist/assets/logo/logo-480.png">
+                        <source media="(min-width: 790px)" srcset="app/dist/assets/logo/logo-790.png">
+                        <img src="app/dist/assets/logo/logo-480.png" alt="Justin Pascual photo">
+                    </picture>
                 </a>
             </div>
-    
+
             <div class="navbar__links">
                 <ul>
                     <li><a href="#" class="active">Works</a></li>
@@ -28,21 +37,38 @@
                     <li><a href="#">Email Me</a></li>
                 </ul>
             </div>
-    
+
             <div class="navbar__menu-button">
-                <a href="#" class="button">Menu</a>
+                <a href="#" class="button" id="menu-button">Menu</a>
+            </div>
+        </div>
+
+        <div class="navbar__mobile">
+            <div class="navbar__mobile__container">
+                <ul>
+                    <li><a href="#" class="active">Works</a></li>
+                    <li><a href="#">Illustrations</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Email me</a></li>
+                    <li>
+                        <a href="#" id="close-button">Close</a>
+                    </li>
+                </ul>
+
+                
             </div>
         </div>
     </nav>
-    
+
     <section class="hero__section--color min-height">
         <div class="hero__section max-width">
             <div class="hero__content">
                 <p class="headline-sub">Justin Raniel Pascual, Visual Designer</p>
                 <h1 class="headline">Turning concepts into reality visual designs.</h1>
-    
+
                 <div class="hero__buttons">
-                    <a href="#" class="button">Design Works <img src="app/dist/assets/icons/icon-arrow.svg" alt="" class="button--icon"></a>
+                    <a href="#" class="button">Design Works <img src="app/dist/assets/icons/icon-arrow.svg" alt=""
+                            class="button--icon"></a>
                     <a href="#" class="button button-2">Download Resume</a>
                 </div>
             </div>
@@ -51,8 +77,19 @@
 
     <section class="project__section--color min-height">
         <div class="project__section max-width">
-            <p>hey</p>
+            <div class="project__content">
+                <h2 class="headline headline-2">Personal Project</h2>
+
+                <div class="grid grid-two">
+                    <div class="project__column">
+
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    
 </body>
+<script src="app/dist/script/navbar.js"></script>
 </html>

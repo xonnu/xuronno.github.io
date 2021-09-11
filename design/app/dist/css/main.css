@@ -10,7 +10,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 100%;
-  outline: 0.0625rem solid rgba(255, 0, 0, 0.09);
 }
 
 /* Customer Properties */
@@ -215,9 +214,13 @@ nav {
   block-size: 100vh;
   background-color: var(--white-color);
   padding: 1rem;
+  inline-size: 100%;
   opacity: 0;
   visibility: hidden;
-  inline-size: 100%;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  -webkit-transition-property: opacity, visibility;
+  transition-property: opacity, visibility;
 }
 
 @media screen and (min-width: 790px) {
@@ -233,17 +236,25 @@ nav {
   visibility: visible;
 }
 
+@media screen and (min-width: 790px) {
+  .navbar__mobile--open {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 .navbar__mobile__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   block-size: 100%;
+  margin-top: -3.125rem;
 }
 
 .navbar__mobile__container .active::before {
@@ -252,7 +263,7 @@ nav {
   left: 0;
   bottom: 0;
   background-color: var(--color-black-1);
-  inline-size: 70%;
+  inline-size: 50%;
   block-size: 0.25rem;
   -webkit-transition: 250ms inline-size linear;
   transition: 250ms inline-size linear;
@@ -260,7 +271,6 @@ nav {
 
 .navbar__mobile__container ul li {
   display: block;
-  inline-size: 100%;
 }
 
 .navbar__mobile__container ul li:not(:last-child) {
@@ -269,7 +279,6 @@ nav {
 
 .navbar__mobile__container ul li a {
   position: relative;
-  display: block;
   font-size: 1.875rem;
   font-weight: 700;
   color: var(--color-black-2);
@@ -343,6 +352,15 @@ body {
   color: var(--color-black-1);
   font-size: 2.5rem;
   line-height: 2.8125rem;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+@media screen and (max-width: 480px) {
+  .headline {
+    font-size: 1.875rem;
+    line-height: 2.1875rem;
+  }
 }
 
 @media screen and (min-width: 790px) {
@@ -368,6 +386,12 @@ body {
   color: var(--color-black-5);
   font-size: 1rem;
   font-weight: 500;
+}
+
+@media screen and (max-width: 480px) {
+  .headline-sub {
+    font-size: 0.875rem;
+  }
 }
 
 @media screen and (min-width: 790px) {
@@ -455,6 +479,10 @@ body {
 
 .hero__buttons a {
   inline-size: auto;
+}
+
+.project__section {
+  padding: 3.125rem 0;
 }
 
 .button {

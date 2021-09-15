@@ -34,9 +34,10 @@ body {
         }
 
         &-short {
-            margin-bottom: rem(100);
+            margin-bottom: rem(50);
 
             @include device(M) {
+                margin-bottom: rem(100);
                 grid-template-columns: 0.5fr 0.6fr !important;
             }
         }

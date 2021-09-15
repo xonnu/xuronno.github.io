@@ -367,11 +367,12 @@ body {
 }
 
 .grid__two-short {
-  margin-bottom: 6.25rem;
+  margin-bottom: 3.125rem;
 }
 
 @media screen and (min-width: 790px) {
   .grid__two-short {
+    margin-bottom: 6.25rem;
     -ms-grid-columns: 0.5fr 0.6fr !important;
         grid-template-columns: 0.5fr 0.6fr !important;
   }

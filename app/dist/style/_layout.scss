@@ -27,9 +27,9 @@ body {
     &__two {
         grid-template-columns: repeat(auto-fit, minmax(rem(320), 1fr));
         grid-auto-flow: row;
+        gap: rem(24);
     }
 }
-
 
 .headline {
     display: block;
@@ -50,12 +50,12 @@ body {
     }
 
     &-2 {
-        font-size: rem(20);
-        line-height: rem(25);
+        font-size: rem(30);
+        line-height: rem(35);
 
         @include device(M) {
-            font-size: rem(30);
-            line-height: rem(35);
+            font-size: rem(40);
+            line-height: rem(45);
         }
     }
 
@@ -139,12 +139,67 @@ body {
 }
 
 .project {
-
     &__section {
         padding: rem(50) 0;
     }
 
     &__column {
         inline-size: 100%;
+
+        &--short {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            flex-direction: column;
+            inline-size: auto;
+
+            .image,
+            .title,
+            .description {
+                inline-size: 100%;
+                display: block;
+                margin-bottom: rem(24);
+            }
+
+            .content {
+                &__container {
+                    block-size: auto;
+                }
+            }
+            .image {
+                border-radius: rem(5);
+                overflow: hidden;
+                block-size: rem(400);
+
+                img {
+                    object-fit: cover;
+                    background-color: var(--light-black-1);
+                    inline-size: 100%;
+                    block-size: 100%;
+                }
+            }
+
+            .title {
+                h2 {
+                    font-size: rem(30);
+                    line-height: rem(40);
+                }
+            }
+
+            .description {
+                p {
+                    font-size: rem(16);
+                    color: var(--color-black-2) !important;
+                }
+            }
+        }
+    }
+
+    &__content {
+        block-size: auto;
+
+        .headline {
+            margin-bottom: rem(50);
+        }
     }
 }

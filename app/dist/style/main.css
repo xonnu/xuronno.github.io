@@ -114,11 +114,13 @@ nav {
 
 .navbar__logo a {
   position: relative;
+  overflow: hidden;
+  border-radius: 100% !important;
 }
 
 .navbar__logo a picture {
   overflow: hidden;
-  border-radius: 100%;
+  border-radius: 100% !important;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -356,7 +358,6 @@ body {
   -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   grid-auto-flow: row;
-  gap: 1.5rem;
 }
 
 .headline {
@@ -384,14 +385,14 @@ body {
 }
 
 .headline-2 {
-  font-size: 1.875rem;
-  line-height: 2.1875rem;
+  font-size: 1.25rem;
+  line-height: 1.5625rem;
 }
 
 @media screen and (min-width: 790px) {
   .headline-2 {
-    font-size: 2.5rem;
-    line-height: 2.8125rem;
+    font-size: 1.875rem;
+    line-height: 2.1875rem;
   }
 }
 
@@ -508,67 +509,6 @@ body {
   inline-size: 100%;
 }
 
-.project__column--short {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  inline-size: auto;
-}
-
-.project__column--short .image,
-.project__column--short .title,
-.project__column--short .description {
-  inline-size: 100%;
-  display: block;
-  margin-bottom: 1.5rem;
-}
-
-.project__column--short .content__container {
-  block-size: auto;
-}
-
-.project__column--short .image {
-  border-radius: 0.3125rem;
-  overflow: hidden;
-  block-size: 25rem;
-}
-
-.project__column--short .image img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  background-color: var(--light-black-1);
-  inline-size: 100%;
-  block-size: 100%;
-}
-
-.project__column--short .title h2 {
-  font-size: 1.875rem;
-  line-height: 2.5rem;
-}
-
-.project__column--short .description p {
-  font-size: 1rem;
-  color: var(--color-black-2) !important;
-}
-
-.project__content {
-  block-size: auto;
-}
-
-.project__content .headline {
-  margin-bottom: 3.125rem;
-}
-
 .button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -606,14 +546,11 @@ body {
 }
 
 .button--icon {
-  max-inline-size: 1.3125rem;
-  max-block-size: 1.3125rem;
   position: relative;
   inline-size: 100%;
   block-size: 100%;
-}
-
-.button--icon--animate {
+  max-inline-size: 1.3125rem;
+  max-block-size: 1.3125rem;
   -webkit-animation-name: upDown;
           animation-name: upDown;
   -webkit-animation-duration: 500ms;

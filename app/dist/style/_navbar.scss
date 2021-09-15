@@ -1,216 +1,216 @@
 nav {
-    background-color: var(--white-color);
+  background-color: var(--white-color);
 }
 
 .navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    block-size: rem(70);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  block-size: rem(70);
 
-    @include device(M) {
-        block-size: rem(80);
-    }
+  @include device(M) {
+    block-size: rem(80);
+  }
 
-    &__logo {
-        margin-right: auto;
+  &__logo {
+    margin-right: auto;
 
-        a {
-            position: relative;
+    a {
+      position: relative;
 
-            picture {
-                display: grid;
-                place-items: center;
-                position: relative;
-            }
+      picture {
+        overflow: hidden;
+        border-radius: 100%;
+        display: grid;
+        place-items: center;
+        position: relative;
+      }
 
-            &::before {
-                content: '';
-                position: absolute;
-                border-radius: 100%;
-                top: 0;
-                left: 0;
-                opacity: 0;
-                border: rem(2) solid var(--color-black-1);
-                inline-size: rem(38);
-                block-size: rem(38);
-                transform: scale(1);
-                transition: all 150ms linear;
-                transition-property: transform, opacity;
-            }
-
-            &:hover {
-                &::before {
-                    opacity: 1;
-                    transform: scale(1.3);
-                }
-            }
-        }
-
-        img {
-            max-inline-size: rem(38);
-            max-block-size: rem(38);
-            inline-size: rem(38);
-            block-size: rem(38);
-        }
-    }
-
-    &__links {
-        visibility: hidden;
-        opacity: 0;
-
-        @include device(M) {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .active {
-            &::before {
-                content: '';
-                position: absolute;
-                bottom: rem(-5);
-                left: 0;
-                background-color: var(--color-black-1);
-                inline-size: 100%;
-                block-size: rem(3);
-                transition: 100ms inline-size linear;
-            }
-        }
-
-        ul {
-            li {
-                display: inline-block;
-
-                &:not(:last-child) {
-                    margin-right: rem(24);
-                }
-
-                a {
-                    position: relative;
-                    font-weight: 600;
-                    color: var(--color-black-1);
-
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        bottom: rem(-5);
-                        left: 0;
-                        background-color: var(--color-black-1);
-                        inline-size: 0%;
-                        block-size: rem(3);
-                        transition: 100ms inline-size linear;
-                    }
-
-                    &:hover {
-
-                        &::before {
-                            inline-size: 80%;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    &__mobile {
+      &::before {
+        content: "";
         position: absolute;
+        border-radius: 100%;
         top: 0;
         left: 0;
-        z-index: 9999;
-        block-size: 100vh;
-        background-color: var(--white-color);
-        padding: rem(16);
+        opacity: 0;
+        border: rem(2) solid var(--color-black-1);
+        inline-size: rem(38);
+        block-size: rem(38);
+        transform: scale(1);
+        transition: all 150ms linear;
+        transition-property: transform, opacity;
+      }
+
+      &:hover {
+        &::before {
+          opacity: 1;
+          transform: scale(1.3);
+        }
+      }
+    }
+
+    img {
+      max-inline-size: rem(38);
+      max-block-size: rem(38);
+      inline-size: rem(38);
+      block-size: rem(38);
+    }
+  }
+
+  &__links {
+    visibility: hidden;
+    opacity: 0;
+
+    @include device(M) {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .active {
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: rem(-5);
+        left: 0;
+        background-color: var(--color-black-1);
         inline-size: 100%;
+        block-size: rem(3);
+        transition: 100ms inline-size linear;
+      }
+    }
+
+    ul {
+      li {
+        display: inline-block;
+
+        &:not(:last-child) {
+          margin-right: rem(24);
+        }
+
+        a {
+          position: relative;
+          font-weight: 600;
+          color: var(--color-black-1);
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: rem(-5);
+            left: 0;
+            background-color: var(--color-black-1);
+            inline-size: 0%;
+            block-size: rem(3);
+            transition: 100ms inline-size linear;
+          }
+
+          &:hover {
+            &::before {
+              inline-size: 80%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__mobile {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    block-size: 100vh;
+    background-color: var(--white-color);
+    padding: rem(16);
+    inline-size: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 250ms ease-in-out;
+    transition-property: opacity, visibility;
+
+    @include device(M) {
+      right: 0;
+      left: auto;
+      inline-size: 50%;
+    }
+
+    &--open {
+      opacity: 1;
+      visibility: visible;
+
+      @include device(M) {
         opacity: 0;
         visibility: hidden;
-        transition: all 250ms ease-in-out;
-        transition-property: opacity, visibility;
-
-        @include device(M) {
-            right: 0;
-            left: auto;
-            inline-size: 50%;
-        }
-
-        &--open {
-            opacity: 1;
-            visibility: visible;
-
-            @include device(M) {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-
-        &__container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            block-size: 100%;
-            margin-top: rem(-50);
-
-            .active {
-                &::before {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    bottom: 0;
-                    background-color: var(--color-black-1);
-                    inline-size: 50%;
-                    block-size: rem(4);
-                    transition: 250ms inline-size linear;
-                }
-            }
-
-            ul li {
-                display: block;
-
-                &:not(:last-child) {
-                    margin-bottom: rem(16);
-                }
-
-                a {
-                    position: relative;
-                    font-size: rem(30);
-                    font-weight: 600;
-                    color: var(--color-black-2);
-
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        bottom: rem(-5);
-                        left: 0;
-                        background-color: var(--color-black-1);
-                        inline-size: 0%;
-                        block-size: rem(4);
-                        transition: 250ms inline-size linear;
-                    }
-
-                    &:hover {
-
-                        &::before {
-                            inline-size: 50%;
-                        }
-                    }
-                }
-            }
-        }
+      }
     }
 
-    &__menu-button {
+    &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      block-size: 100%;
+      margin-top: rem(-50);
+
+      .active {
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background-color: var(--color-black-1);
+          inline-size: 50%;
+          block-size: rem(4);
+          transition: 250ms inline-size linear;
+        }
+      }
+
+      ul li {
         display: block;
-        visibility: visible;
-        opacity: 1;
 
-        @include device(M) {
-            display: none;
-            visibility: hidden;
-            opacity: 0;
+        &:not(:last-child) {
+          margin-bottom: rem(16);
         }
 
-        .button {
-            padding: rem(8) rem(16);
+        a {
+          position: relative;
+          font-size: rem(30);
+          font-weight: 600;
+          color: var(--color-black-2);
+
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: rem(-5);
+            left: 0;
+            background-color: var(--color-black-1);
+            inline-size: 0%;
+            block-size: rem(4);
+            transition: 250ms inline-size linear;
+          }
+
+          &:hover {
+            &::before {
+              inline-size: 50%;
+            }
+          }
         }
+      }
     }
+  }
+
+  &__menu-button {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+
+    @include device(M) {
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .button {
+      padding: rem(8) rem(16);
+    }
+  }
 }

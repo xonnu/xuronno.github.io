@@ -24,30 +24,31 @@
     }
 
     &--icon {
+        max-inline-size: rem(21);
+        max-block-size: rem(21);
         position: relative;
         inline-size: 100%;
         block-size: 100%;
-        max-inline-size: rem(21);
-        max-block-size: rem(21);
-        animation-name: upDown;
-        animation-duration: 500ms;
-        animation-timing-function: ease-out;
-        animation-direction: alternate;
-        animation-iteration-count: infinite;
-        animation-play-state: running;
 
-        @keyframes upDown {
-            0% {
-                top: rem(5);
-            }
+        &--animate {
+            animation-name: upDown;
+            animation-duration: 500ms;
+            animation-timing-function: ease-out;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-play-state: running;
 
-            100% {
-                top: 0;
+            @keyframes upDown {
+                0% {
+                    top: rem(5);
+                }
+
+                100% {
+                    top: 0;
+                }
             }
         }
     }
-
-
 
     &:hover {
         background-color: var(--color-black-1);

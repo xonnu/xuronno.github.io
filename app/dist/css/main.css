@@ -366,6 +366,10 @@ body {
   }
 }
 
+.grid__two-short {
+  margin-bottom: 6.25rem;
+}
+
 @media screen and (min-width: 790px) {
   .grid__two-short {
     -ms-grid-columns: 0.5fr 0.6fr !important;
@@ -657,13 +661,20 @@ body {
 }
 
 .project__context .information {
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-black-4);
   margin-bottom: 0.625rem;
+  font-size: 0.875rem;
 }
 
 .project__context .title h2 {
-  font-size: 2.1875rem;
+  font-size: 1.5625rem;
+}
+
+@media screen and (min-width: 790px) {
+  .project__context .title h2 {
+    font-size: 2.1875rem;
+  }
 }
 
 .project__context .description {
@@ -685,14 +696,7 @@ body {
 
 .project__content {
   block-size: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 1.5rem;
+  display: block;
 }
 
 .project__content .headline {

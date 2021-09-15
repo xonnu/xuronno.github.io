@@ -34,6 +34,8 @@ body {
         }
 
         &-short {
+            margin-bottom: rem(100);
+
             @include device(M) {
                 grid-template-columns: 0.5fr 0.6fr !important;
             }
@@ -264,12 +266,17 @@ body {
         }
 
         .information {
-            font-weight: 500;
+            font-weight: 600;
             color: var(--color-black-4);
             margin-bottom: rem(10);
+            font-size: rem(14);
         }
+
         .title h2 {
-            font-size: rem(35);
+            font-size: rem(25);
+            @include device(M) {
+                font-size: rem(35);
+            }
         }
 
         .description {
@@ -289,9 +296,7 @@ body {
 
     &__content {
         block-size: auto;
-        display: flex;
-        flex-direction: column;
-        gap: rem(24);
+        display: block;
 
         .headline {
             margin-bottom: rem(50);

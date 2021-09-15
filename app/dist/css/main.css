@@ -583,9 +583,16 @@ body {
 }
 
 .project__column--short .description p {
-  padding-right: 0.625rem;
-  font-size: 1rem;
-  color: var(--color-black-2) !important;
+  line-height: 1.3125rem;
+  font-size: 0.875rem;
+  color: var(--color-black-3) !important;
+}
+
+@media screen and (min-width: 790px) {
+  .project__column--short .description p {
+    line-height: 1.5rem;
+    font-size: 1rem;
+  }
 }
 
 .project__content {

@@ -204,9 +204,14 @@ body {
 
             .description {
                 p {
-                    padding-right: rem(10);
-                    font-size: rem(16);
-                    color: var(--color-black-2) !important;
+                    line-height: rem(21);
+                    font-size: rem(14);
+                    color: var(--color-black-3) !important;
+
+                    @include device(M) {
+                        line-height: rem(24);
+                        font-size: rem(16);
+                    }
                 }
             }
         }

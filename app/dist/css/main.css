@@ -48,8 +48,8 @@ html {
 
 html,
 body {
-  block-size: 100%;
-  inline-size: 100%;
+  height: 100%;
+  width: 100%;
   outline-color: transparent;
 }
 
@@ -72,9 +72,13 @@ a {
   text-decoration: none;
 }
 
+p {
+  color: var(--color-black-3);
+}
+
 img {
   pointer-events: none;
-  max-inline-size: 100%;
+  max-width: 100%;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
@@ -86,6 +90,7 @@ nav {
 }
 
 .navbar {
+  padding: 0 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -325,31 +330,32 @@ nav {
 }
 
 section {
-  block-size: auto;
+  height: auto;
   position: relative;
-  inline-size: 100%;
-  block-size: 100%;
-  min-block-size: 37.5rem;
-}
-
-body {
-  padding: 0 1.5rem;
+  width: 100%;
+  height: 100%;
+  min-height: 37.5rem;
 }
 
 .max-width {
-  max-inline-size: 61.25rem;
-  inline-size: 100%;
+  max-width: 62.75rem;
+  width: 100%;
   margin: 0rem auto;
 }
 
 .min-height {
-  block-size: auto;
-  min-block-size: 37.5rem;
+  height: auto;
+  min-height: 37.5rem;
+}
+
+.padding {
+  padding: 0 1.5rem !important;
 }
 
 .grid {
   display: -ms-grid;
   display: grid;
+  width: 100%;
 }
 
 .grid__two {
@@ -396,6 +402,20 @@ body {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+}
+
+.grid__three {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  grid-auto-flow: row;
+  gap: 1.5rem;
+}
+
+@media screen and (min-width: 790px) {
+  .grid__three {
+    -ms-grid-columns: (minmax(17.5rem, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(17.5rem, 1fr));
+  }
 }
 
 .headline {
@@ -460,67 +480,100 @@ body {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  block-size: auto;
-  min-block-size: inherit;
+  height: auto;
+  min-height: inherit;
+}
+
+.hero__section--column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 @media screen and (min-width: 790px) {
   .hero__section {
-    min-block-size: inherit;
+    min-height: inherit;
   }
 }
 
-.hero__section--color {
-  position: relative;
-  block-size: auto;
-  background-color: var(--white-color);
-  min-block-size: 25rem;
-}
-
-@media screen and (max-width: 480px) {
-  .hero__section--color {
-    min-block-size: 31.25rem;
-  }
-}
-
-@media screen and (min-width: 790px) {
-  .hero__section--color {
-    min-block-size: 37.5rem;
-  }
-}
-
-.hero__content {
-  inline-size: 90%;
-}
-
-@media screen and (max-width: 480px) {
-  .hero__content {
-    inline-size: 100%;
-  }
-}
-
-@media screen and (min-width: 790px) {
-  .hero__content {
-    inline-size: 80%;
-    margin-top: 0;
-  }
-}
-
-.hero__content h1 {
+.hero__section h1 {
   margin: 0.625rem 0 1.25rem 0;
 }
 
 @media screen and (min-width: 790px) {
-  .hero__content h1 {
+  .hero__section h1 {
     margin: 1rem 0 1.875rem 0;
   }
+}
+
+.hero__section--color {
+  padding: 3.125rem 0;
+  position: relative;
+  height: auto;
+  background-color: var(--white-color);
+  min-height: 25rem;
+}
+
+.hero__section--color--black {
+  background-color: var(--color-black-1);
+}
+
+.hero__section--color--black * {
+  color: var(--white-color) !important;
+}
+
+.hero__section--color--black ::-moz-selection {
+  color: var(--black-color);
+}
+
+.hero__section--color--black ::selection {
+  color: var(--black-color);
+}
+
+.hero__section--color--black p {
+  opacity: 80%;
+}
+
+@media screen and (max-width: 480px) {
+  .hero__section--color {
+    min-height: 31.25rem;
+  }
+}
+
+@media screen and (min-width: 790px) {
+  .hero__section--color {
+    min-height: 37.5rem;
+  }
+}
+
+.hero__content {
+  width: 90%;
+}
+
+@media screen and (max-width: 480px) {
+  .hero__content {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 790px) {
+  .hero__content {
+    width: 80%;
+    margin-top: 0;
+  }
+}
+
+.hero__content-max {
+  width: 100%;
+  margin-bottom: 2.5rem;
 }
 
 .hero__buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  inline-size: 100%;
+  width: 100%;
   gap: 1rem;
 }
 
@@ -534,7 +587,7 @@ body {
 }
 
 .hero__buttons a {
-  inline-size: auto;
+  width: auto;
 }
 
 .project__section {
@@ -542,8 +595,14 @@ body {
 }
 
 .project__column {
-  inline-size: 100%;
-  block-size: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 790px) {
+  .project__column {
+    min-height: 12.5rem;
+  }
 }
 
 .project__column--short {
@@ -560,36 +619,36 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  inline-size: auto;
+  width: auto;
 }
 
 .project__column--short .image,
 .project__column--short .title,
 .project__column--short .description {
-  inline-size: 100%;
+  width: 100%;
   display: block;
   margin-bottom: 1.5rem;
 }
 
 .project__column--short .content__container {
-  block-size: auto;
+  height: auto;
 }
 
 .project__column--short .image {
   border-radius: 0.3125rem;
   overflow: hidden;
-  block-size: auto;
+  height: auto;
 }
 
 @media screen and (max-width: 480px) {
   .project__column--short .image {
-    block-size: 21.875rem;
+    height: 21.875rem;
   }
 }
 
 @media screen and (min-width: 790px) {
   .project__column--short .image {
-    block-size: 25rem;
+    height: 25rem;
   }
 }
 
@@ -598,8 +657,8 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   background-color: var(--light-black-1);
-  inline-size: 100%;
-  block-size: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .project__column--short .title h2 {
@@ -631,12 +690,12 @@ body {
   border-radius: 0.3125rem;
   -o-object-fit: cover;
      object-fit: cover;
-  inline-size: 100%;
-  block-size: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .project__image img {
-  block-size: 100%;
+  height: 100%;
 }
 
 .project__context {
@@ -650,13 +709,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  block-size: 100%;
+  height: 100%;
 }
 
 .project__context .title,
 .project__context .description,
 .project__context .information {
-  inline-size: 90%;
+  width: 90%;
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -668,6 +727,36 @@ body {
   font-size: 0.875rem;
 }
 
+.project__context .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.project__context .title .number {
+  margin-right: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0.3125rem;
+  background-color: var(--light-black-1);
+  width: 2.375rem;
+  height: 2.375rem;
+}
+
 .project__context .title h2 {
   font-size: 1.5625rem;
 }
@@ -676,6 +765,11 @@ body {
   .project__context .title h2 {
     font-size: 2.1875rem;
   }
+}
+
+.project__context .title h3 {
+  margin-bottom: 0.625rem;
+  font-size: 1.5625rem;
 }
 
 .project__context .description {
@@ -695,8 +789,12 @@ body {
   }
 }
 
+.project__context .description-max {
+  width: 100%;
+}
+
 .project__content {
-  block-size: auto;
+  height: auto;
   display: block;
 }
 
@@ -723,11 +821,11 @@ a {
   -webkit-column-gap: 1rem;
           column-gap: 1rem;
   text-align: center;
-  inline-size: -webkit-fit-content !important;
-  inline-size: -moz-fit-content !important;
-  inline-size: fit-content !important;
-  min-block-size: 2.8125rem;
-  min-inline-size: 3.125rem;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  min-height: 2.8125rem;
+  min-width: 3.125rem;
   border: 1px solid var(--light-black-1);
   background-color: var(--light-black-1);
   padding: 0.625rem 1rem;
@@ -747,7 +845,7 @@ a {
 
 .button span {
   display: block;
-  inline-size: auto;
+  width: auto;
 }
 
 .button-2 {
@@ -757,8 +855,8 @@ a {
 
 .button--icon {
   position: relative;
-  inline-size: 1.3125rem;
-  block-size: 1.3125rem;
+  width: 1.3125rem;
+  height: 1.3125rem;
 }
 
 .button--icon--animate {

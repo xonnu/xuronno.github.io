@@ -1,29 +1,28 @@
 section {
-    block-size: auto;
+    height: auto;
     position: relative;
-    inline-size: 100%;
-    block-size: 100%;
-    min-block-size: rem(600);
-}
-
-body {
-    padding: 0 rem(24);
+    width: 100%;
+    height: 100%;
+    min-height: rem(600);
 }
 
 .max-width {
-    max-inline-size: rem(980);
-    inline-size: 100%;
+    max-width: rem(1004);
+    width: 100%;
     margin: rem(0) auto;
 }
 
 .min-height {
-    block-size: auto;
-    min-block-size: rem(600);
+    height: auto;
+    min-height: rem(600);
 }
 
+.padding {
+    padding: 0 rem(24) !important;
+}
 .grid {
     display: grid;
-
+    width: 100%;
     &__two {
         grid-template-columns: 1fr;
         grid-auto-flow: row;
@@ -55,6 +54,15 @@ body {
                     order: 1;
                 }
             }
+        }
+    }
+    &__three {
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+        gap: rem(24);
+
+        @include device(M) {
+            grid-template-columns: repeat(auto-fill, minmax(rem(280), 1fr));
         }
     }
 }
@@ -106,39 +114,14 @@ body {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        block-size: auto;
-        min-block-size: inherit;
+        height: auto;
+        min-height: inherit;
 
+        &--column {
+            flex-direction: column;
+        }
         @include device(M) {
-            min-block-size: inherit;
-        }
-
-        &--color {
-            position: relative;
-            block-size: auto;
-            background-color: var(--white-color);
-            min-block-size: rem(400);
-
-            @include device(S) {
-                min-block-size: rem(500);
-            }
-
-            @include device(M) {
-                min-block-size: rem(600);
-            }
-        }
-    }
-
-    &__content {
-        inline-size: 90%;
-
-        @include device(S) {
-            inline-size: 100%;
-        }
-
-        @include device(M) {
-            inline-size: 80%;
-            margin-top: 0;
+            min-height: inherit;
         }
 
         h1 {
@@ -148,11 +131,59 @@ body {
                 margin: rem(16) 0 rem(30) 0;
             }
         }
+
+        &--color {
+            padding: rem(50) 0;
+            position: relative;
+            height: auto;
+            background-color: var(--white-color);
+            min-height: rem(400);
+
+            &--black {
+                background-color: var(--color-black-1);
+                * {
+                    color: var(--white-color) !important;
+                }
+
+                ::selection {
+                    color: var(--black-color);
+                }
+
+                p {
+                    opacity: 80%;
+                }
+            }
+            @include device(S) {
+                min-height: rem(500);
+            }
+
+            @include device(M) {
+                min-height: rem(600);
+            }
+        }
+    }
+
+    &__content {
+        width: 90%;
+
+        @include device(S) {
+            width: 100%;
+        }
+
+        @include device(M) {
+            width: 80%;
+            margin-top: 0;
+        }
+
+        &-max {
+            width: 100%;
+            margin-bottom: rem(40);
+        }
     }
 
     &__buttons {
         display: flex;
-        inline-size: 100%;
+        width: 100%;
         gap: rem(16);
 
         @include device(S) {
@@ -160,7 +191,7 @@ body {
         }
 
         a {
-            inline-size: auto;
+            width: auto;
         }
     }
 }
@@ -171,47 +202,50 @@ body {
     }
 
     &__column {
-        inline-size: 100%;
-        block-size: 100%;
+        width: 100%;
+        height: 100%;
 
+        @include device(M) {
+            min-height: rem(200);
+        }
         &--short {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
             flex-direction: column;
-            inline-size: auto;
+            width: auto;
 
             .image,
             .title,
             .description {
-                inline-size: 100%;
+                width: 100%;
                 display: block;
                 margin-bottom: rem(24);
             }
 
             .content__container {
-                block-size: auto;
+                height: auto;
             }
 
             .image {
                 border-radius: rem(5);
                 overflow: hidden;
-                block-size: auto;
+                height: auto;
 
                 @include device(S) {
-                    block-size: rem(350);
+                    height: rem(350);
                 }
 
                 @include device(M) {
-                    block-size: rem(400);
+                    height: rem(400);
                 }
 
                 img {
                     border-radius: rem(5);
                     object-fit: cover;
                     background-color: var(--light-black-1);
-                    inline-size: 100%;
-                    block-size: 100%;
+                    width: 100%;
+                    height: 100%;
                 }
             }
 
@@ -245,10 +279,10 @@ body {
     &__image {
         border-radius: rem(5);
         object-fit: cover;
-        inline-size: 100%;
-        block-size: 100%;
+        width: 100%;
+        height: 100%;
         img {
-            block-size: 100%;
+            height: 100%;
         }
     }
 
@@ -256,12 +290,12 @@ body {
         display: flex;
         justify-content: center;
         flex-direction: column;
-        block-size: 100%;
+        height: 100%;
 
         .title,
         .description,
         .information {
-            inline-size: 90%;
+            width: 90%;
             display: block;
             margin-bottom: rem(8);
         }
@@ -273,10 +307,34 @@ body {
             font-size: rem(14);
         }
 
-        .title h2 {
-            font-size: rem(25);
-            @include device(M) {
-                font-size: rem(35);
+        .title {
+            display: flex;
+            flex-direction: row;
+
+            .number {
+                margin-right: rem(24);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: rem(24);
+                font-weight: 700;
+                text-align: center;
+                border-radius: rem(5);
+                background-color: var(--light-black-1);
+                width: rem(38);
+                height: rem(38);
+            }
+
+            h2 {
+                font-size: rem(25);
+                @include device(M) {
+                    font-size: rem(35);
+                }
+            }
+
+            h3 {
+                margin-bottom: rem(10);
+                font-size: rem(25);
             }
         }
 
@@ -292,11 +350,15 @@ body {
                     font-size: rem(15);
                 }
             }
+
+            &-max {
+                width: 100%;
+            }
         }
     }
 
     &__content {
-        block-size: auto;
+        height: auto;
         display: block;
 
         .headline {

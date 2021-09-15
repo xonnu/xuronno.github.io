@@ -10,9 +10,9 @@ a {
     column-gap: rem(16);
 
     text-align: center;
-    inline-size: fit-content !important;
-    min-block-size: rem(45);
-    min-inline-size: rem(50);
+    width: fit-content !important;
+    min-height: rem(45);
+    min-width: rem(50);
 
     border: 1px solid var(--light-black-1);
     background-color: var(--light-black-1);
@@ -30,7 +30,7 @@ a {
 
     span {
         display: block;
-        inline-size: auto;
+        width: auto;
     }
 
     &-2 {
@@ -40,8 +40,8 @@ a {
 
     &--icon {
         position: relative;
-        inline-size: rem(21);
-        block-size: rem(21);
+        width: rem(21);
+        height: rem(21);
 
         &--animate {
             animation-name: upDown;

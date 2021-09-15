@@ -25,9 +25,13 @@ body {
     display: grid;
 
     &__two {
-        grid-template-columns: repeat(auto-fit, minmax(rem(320), 1fr));
+        grid-template-columns: 1fr;
         grid-auto-flow: row;
         gap: rem(24);
+
+        @include device(M) {
+            grid-template-columns: repeat(auto-fit, minmax(rem(320), 1fr));
+        }
     }
 }
 
@@ -161,15 +165,23 @@ body {
                 margin-bottom: rem(24);
             }
 
-            .content {
-                &__container {
-                    block-size: auto;
-                }
+            .content__container {
+                block-size: auto;
+                padding-right: rem(10);
             }
+
             .image {
                 border-radius: rem(5);
                 overflow: hidden;
-                block-size: rem(400);
+                block-size: rem(350);
+
+                @include device(S) {
+                    block-size: rem(250);
+                }
+
+                @include device(M) {
+                    block-size: rem(400);
+                }
 
                 img {
                     object-fit: cover;
@@ -182,7 +194,12 @@ body {
             .title {
                 h2 {
                     font-size: rem(30);
-                    line-height: rem(40);
+                    line-height: rem(35);
+
+                    @include device(S) {
+                        font-size: rem(25);
+                        line-height: rem(30);
+                    }
                 }
             }
 

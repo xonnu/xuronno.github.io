@@ -126,7 +126,7 @@ nav {
 }
 
 .navbar__logo a::before {
-  content: "";
+  content: '';
   position: absolute;
   border-radius: 100%;
   top: 0;
@@ -171,7 +171,7 @@ nav {
 }
 
 .navbar__links .active::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -0.3125rem;
   left: 0;
@@ -197,7 +197,7 @@ nav {
 }
 
 .navbar__links ul li a::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -0.3125rem;
   left: 0;
@@ -264,7 +264,7 @@ nav {
 }
 
 .navbar__mobile__container .active::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -291,7 +291,7 @@ nav {
 }
 
 .navbar__mobile__container ul li a::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -0.3125rem;
   left: 0;
@@ -366,14 +366,39 @@ body {
   }
 }
 
+@media screen and (min-width: 790px) {
+  .grid__two-short {
+    -ms-grid-columns: 0.5fr 0.6fr !important;
+        grid-template-columns: 0.5fr 0.6fr !important;
+  }
+}
+
+.grid__two-reverse .project__column:first-child {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+}
+
+@media screen and (min-width: 790px) {
+  .grid__two-reverse .project__column:first-child {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+
+.grid__two-reverse .project__column:last-child {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+}
+
 .headline {
   display: block;
   font-weight: 700;
   color: var(--color-black-1);
   font-size: 2.5rem;
   line-height: 2.8125rem;
-  -webkit-transition: font-size 400ms ease-in-out;
-  transition: font-size 400ms ease-in-out;
 }
 
 @media screen and (max-width: 480px) {
@@ -513,6 +538,7 @@ body {
 
 .project__column {
   inline-size: 100%;
+  block-size: 100%;
 }
 
 .project__column--short {
@@ -547,12 +573,12 @@ body {
 .project__column--short .image {
   border-radius: 0.3125rem;
   overflow: hidden;
-  block-size: 21.875rem;
+  block-size: auto;
 }
 
 @media screen and (max-width: 480px) {
   .project__column--short .image {
-    block-size: 15.625rem;
+    block-size: 21.875rem;
   }
 }
 
@@ -563,6 +589,7 @@ body {
 }
 
 .project__column--short .image img {
+  border-radius: 0.3125rem;
   -o-object-fit: cover;
      object-fit: cover;
   background-color: var(--light-black-1);
@@ -590,17 +617,91 @@ body {
 
 @media screen and (min-width: 790px) {
   .project__column--short .description p {
-    line-height: 1.5rem;
-    font-size: 1rem;
+    line-height: 1.375rem;
+    font-size: 0.9375rem;
+  }
+}
+
+.project__image {
+  border-radius: 0.3125rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.project__image img {
+  block-size: 100%;
+}
+
+.project__context {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  block-size: 100%;
+}
+
+.project__context .title,
+.project__context .description,
+.project__context .information {
+  inline-size: 90%;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.project__context .information {
+  font-weight: 500;
+  color: var(--color-black-4);
+  margin-bottom: 0.625rem;
+}
+
+.project__context .title h2 {
+  font-size: 2.1875rem;
+}
+
+.project__context .description {
+  margin-bottom: 1.5rem;
+}
+
+.project__context .description p {
+  line-height: 1.3125rem;
+  font-size: 0.875rem;
+  color: var(--color-black-3) !important;
+}
+
+@media screen and (min-width: 790px) {
+  .project__context .description p {
+    line-height: 1.375rem;
+    font-size: 0.9375rem;
   }
 }
 
 .project__content {
   block-size: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
 }
 
 .project__content .headline {
   margin-bottom: 3.125rem;
+}
+
+a {
+  display: block;
+  width: auto;
 }
 
 .button {
@@ -610,12 +711,17 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-column-gap: 1rem;
           column-gap: 1rem;
   text-align: center;
   inline-size: -webkit-fit-content !important;
   inline-size: -moz-fit-content !important;
   inline-size: fit-content !important;
+  min-block-size: 2.8125rem;
   min-inline-size: 3.125rem;
   border: 1px solid var(--light-black-1);
   background-color: var(--light-black-1);
@@ -634,17 +740,20 @@ body {
   }
 }
 
+.button span {
+  display: block;
+  inline-size: auto;
+}
+
 .button-2 {
   border: 1px solid var(--light-black-2);
   background-color: var(--white-color);
 }
 
 .button--icon {
-  max-inline-size: 1.3125rem;
-  max-block-size: 1.3125rem;
   position: relative;
-  inline-size: 100%;
-  block-size: 100%;
+  inline-size: 1.3125rem;
+  block-size: 1.3125rem;
 }
 
 .button--icon--animate {

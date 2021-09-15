@@ -1,13 +1,23 @@
+a {
+    display: block;
+    width: auto;
+}
+
 .button {
     display: flex;
     align-items: center;
+    flex-direction: row;
     column-gap: rem(16);
+
     text-align: center;
     inline-size: fit-content !important;
+    min-block-size: rem(45);
     min-inline-size: rem(50);
+
     border: 1px solid var(--light-black-1);
     background-color: var(--light-black-1);
     padding: rem(10) rem(16);
+
     border-radius: rem(3);
     font-size: rem(15);
     font-weight: 700;
@@ -18,17 +28,20 @@
         font-size: rem(15);
     }
 
+    span {
+        display: block;
+        inline-size: auto;
+    }
+
     &-2 {
         border: 1px solid var(--light-black-2);
         background-color: var(--white-color);
     }
 
     &--icon {
-        max-inline-size: rem(21);
-        max-block-size: rem(21);
         position: relative;
-        inline-size: 100%;
-        block-size: 100%;
+        inline-size: rem(21);
+        block-size: rem(21);
 
         &--animate {
             animation-name: upDown;

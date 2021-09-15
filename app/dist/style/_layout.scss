@@ -32,6 +32,27 @@ body {
         @include device(M) {
             grid-template-columns: repeat(auto-fit, minmax(rem(320), 1fr));
         }
+
+        &-short {
+            @include device(M) {
+                grid-template-columns: 0.5fr 0.6fr !important;
+            }
+        }
+        &-reverse {
+            .project__column {
+                &:first-child {
+                    order: 2;
+
+                    @include device(M) {
+                        order: 1;
+                    }
+                }
+
+                &:last-child {
+                    order: 1;
+                }
+            }
+        }
     }
 }
 
@@ -41,7 +62,6 @@ body {
     color: var(--color-black-1);
     font-size: rem(40);
     line-height: rem(45);
-    transition: font-size 400ms ease-in-out;
 
     @include device(S) {
         font-size: rem(40);
@@ -149,6 +169,7 @@ body {
 
     &__column {
         inline-size: 100%;
+        block-size: 100%;
 
         &--short {
             display: flex;
@@ -172,10 +193,10 @@ body {
             .image {
                 border-radius: rem(5);
                 overflow: hidden;
-                block-size: rem(350);
+                block-size: auto;
 
                 @include device(S) {
-                    block-size: rem(250);
+                    block-size: rem(350);
                 }
 
                 @include device(M) {
@@ -183,6 +204,7 @@ body {
                 }
 
                 img {
+                    border-radius: rem(5);
                     object-fit: cover;
                     background-color: var(--light-black-1);
                     inline-size: 100%;
@@ -209,9 +231,57 @@ body {
                     color: var(--color-black-3) !important;
 
                     @include device(M) {
-                        line-height: rem(24);
-                        font-size: rem(16);
+                        line-height: rem(22);
+                        font-size: rem(15);
                     }
+                }
+            }
+        }
+    }
+
+    &__image {
+        border-radius: rem(5);
+        object-fit: cover;
+        inline-size: 100%;
+        block-size: 100%;
+        img {
+            block-size: 100%;
+        }
+    }
+
+    &__context {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        block-size: 100%;
+
+        .title,
+        .description,
+        .information {
+            inline-size: 90%;
+            display: block;
+            margin-bottom: rem(8);
+        }
+
+        .information {
+            font-weight: 500;
+            color: var(--color-black-4);
+            margin-bottom: rem(10);
+        }
+        .title h2 {
+            font-size: rem(35);
+        }
+
+        .description {
+            margin-bottom: rem(24);
+            p {
+                line-height: rem(21);
+                font-size: rem(14);
+                color: var(--color-black-3) !important;
+
+                @include device(M) {
+                    line-height: rem(22);
+                    font-size: rem(15);
                 }
             }
         }
@@ -219,6 +289,9 @@ body {
 
     &__content {
         block-size: auto;
+        display: flex;
+        flex-direction: column;
+        gap: rem(24);
 
         .headline {
             margin-bottom: rem(50);

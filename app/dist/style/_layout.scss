@@ -167,7 +167,6 @@ body {
 
             .content__container {
                 block-size: auto;
-                padding-right: rem(10);
             }
 
             .image {
@@ -205,6 +204,7 @@ body {
 
             .description {
                 p {
+                    padding-right: rem(10);
                     font-size: rem(16);
                     color: var(--color-black-2) !important;
                 }

@@ -7,6 +7,7 @@ section {
 }
 
 .max-width {
+    position: relative;
     max-width: rem(1004);
     width: 100%;
     margin: rem(0) auto;
@@ -26,6 +27,9 @@ section {
     padding-bottom: rem(70) !important;
 }
 
+.flip-image {
+    transform: scaleX(-1);
+}
 .grid {
     display: grid;
     width: 100%;
@@ -122,9 +126,6 @@ section {
         height: auto;
         min-height: inherit;
 
-        &--column {
-            flex-direction: column;
-        }
         @include device(M) {
             min-height: inherit;
         }
@@ -135,6 +136,9 @@ section {
             @include device(M) {
                 margin: rem(16) 0 rem(30) 0;
             }
+        }
+        &--column {
+            flex-direction: column;
         }
 
         &--color {
@@ -166,6 +170,18 @@ section {
                 min-height: rem(600);
             }
         }
+
+        &--first {
+            margin-top: rem(70);
+            @include device(M) {
+                margin-top: rem(80);
+            }
+        }
+    }
+
+    &__contact {
+        position: relative;
+        margin-bottom: rem(70);
     }
 
     &__content {
@@ -197,6 +213,35 @@ section {
 
         a {
             width: auto;
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: rem(48) rem(24);
+
+        p,
+        ul {
+            font-size: rem(15);
+        }
+
+        ul {
+            color: var(--color-black-3);
+            li {
+                display: inline-block;
+
+                a {
+                    color: var(--color-black-3);
+                    text-decoration: underline;
+
+                    &:hover {
+                        color: var(--color-black-1);
+                    }
+                }
+            }
         }
     }
 }

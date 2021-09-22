@@ -1,17 +1,28 @@
 nav {
     background-color: var(--white-color);
+    position: fixed;
+    top: 0;
+    transition: all 300ms ease-in-out;
+    width: 100%;
+    height: rem(70);
+    display: flex;
+    align-items: center;
+    z-index: 9999;
+
+    @include device(M) {
+        height: rem(80);
+    }
 }
 
 .navbar {
-    padding: 0 rem(24);
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-    block-size: rem(70);
+    height: rem(70);
 
     @include device(M) {
-        block-size: rem(80);
+        height: rem(80);
     }
 
     &__logo {
@@ -37,7 +48,7 @@ nav {
                 opacity: 0;
                 border: rem(2) solid var(--color-black-1);
                 inline-size: rem(38);
-                block-size: rem(38);
+                height: rem(38);
                 transform: scale(1);
                 transition: all 150ms linear;
                 transition-property: transform, opacity;
@@ -53,9 +64,9 @@ nav {
 
         img {
             max-inline-size: rem(38);
-            max-block-size: rem(38);
+            max-height: rem(38);
             inline-size: rem(38);
-            block-size: rem(38);
+            height: rem(38);
         }
     }
 
@@ -76,7 +87,7 @@ nav {
                 left: 0;
                 background-color: var(--color-black-1);
                 inline-size: 100%;
-                block-size: rem(3);
+                height: rem(3);
                 transition: 100ms inline-size linear;
             }
         }
@@ -101,7 +112,7 @@ nav {
                         left: 0;
                         background-color: var(--color-black-1);
                         inline-size: 0%;
-                        block-size: rem(3);
+                        height: rem(3);
                         transition: 100ms inline-size linear;
                     }
 
@@ -120,7 +131,7 @@ nav {
         top: 0;
         left: 0;
         z-index: 9999;
-        block-size: 100vh;
+        height: 100vh;
         background-color: var(--white-color);
         padding: rem(16);
         inline-size: 100%;
@@ -149,7 +160,7 @@ nav {
             display: flex;
             justify-content: center;
             align-items: center;
-            block-size: 100%;
+            height: 100%;
             margin-top: rem(-50);
 
             .active {
@@ -160,7 +171,7 @@ nav {
                     bottom: 0;
                     background-color: var(--color-black-1);
                     inline-size: 50%;
-                    block-size: rem(4);
+                    height: rem(4);
                     transition: 250ms inline-size linear;
                 }
             }
@@ -185,7 +196,7 @@ nav {
                         left: 0;
                         background-color: var(--color-black-1);
                         inline-size: 0%;
-                        block-size: rem(4);
+                        height: rem(4);
                         transition: 250ms inline-size linear;
                     }
 

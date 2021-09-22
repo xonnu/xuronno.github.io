@@ -22,7 +22,7 @@
     </head>
 
     <body>
-        <nav>
+        <nav id="navbar">
             <div class="navbar max-width padding">
                 <div class="navbar__logo">
                     <a href="/index.html" aria-label="Home button">
@@ -44,6 +44,8 @@
                                 class="lazyload"
                                 data-src="app/dist/assets/logo/logo-480.png"
                                 alt="Justin Pascual photo"
+                                id="init-size"
+                                style="min-height: 38px"
                             />
                         </picture>
                     </a>
@@ -59,7 +61,7 @@
                 </div>
 
                 <div class="navbar__menu-button">
-                    <a href="#" class="button" id="menu-button">Menu</a>
+                    <a class="button" id="menu-button">Menu</a>
                 </div>
             </div>
 
@@ -70,13 +72,13 @@
                         <li><a href="#">Illustrations</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Email Me</a></li>
-                        <li><a href="#" id="close-button">Close</a></li>
+                        <li><a id="close-button">Close</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <section class="hero__section--color min-height">
+        <section class="hero__section--color hero__section--first min-height">
             <div class="hero__section max-width padding">
                 <div class="hero__content">
                     <p class="headline-sub">
@@ -96,6 +98,8 @@
                                     button--icon button--icon--animate
                                     lazyload
                                 "
+                                id="init-size"
+                                style="min-height: 21px"
                             />
                         </a>
                         <a href="#" class="button button-2">Download Resume</a>
@@ -110,46 +114,6 @@
         >
             <div class="project__section max-width padding">
                 <div class="project__content">
-                    <div
-                        class="grid grid__two grid__two-short grid__two-reverse"
-                    >
-                        <div class="project__column">
-                            <div class="project__context">
-                                <div class="title">
-                                    <h2>EliteSnap</h2>
-                                </div>
-
-                                <p class="information">
-                                    Web Dev - Oct (2017-2021)
-                                </p>
-                                <div class="description">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna
-                                        aliqua. Lorem ipsum dolor sit amet.
-                                    </p>
-                                </div>
-
-                                <a href="#" class="button button-2"
-                                    ><span>Live Website</span>
-                                    <img
-                                        src="app/dist/assets/icons/icon-arrow-right.svg"
-                                        alt=""
-                                        class="button--icon"
-                                /></a>
-                            </div>
-                        </div>
-
-                        <div class="project__column">
-                            <img
-                                data-src="app/dist/assets/sample.jpg"
-                                class="project__image lazyload"
-                                alt=""
-                            />
-                        </div>
-                    </div>
-
                     <div
                         class="grid grid__two grid__two-short grid__two-reverse"
                     >
@@ -177,20 +141,98 @@
                                         src="app/dist/assets/icons/icon-arrow-right.svg"
                                         alt=""
                                         class="button--icon"
+                                        id="init-size"
+                                        style="min-height: 21px"
                                 /></a>
                             </div>
                         </div>
 
                         <div class="project__column">
-                            <img
-                                data-src="app/dist/assets/sample.jpg"
-                                class="project__image lazyload"
-                                alt=""
-                            />
+                            <picture>
+                                <source
+                                    type="image/webp"
+                                    data-srcset="app/dist/assets/images/cover-DLoad-900.webp"
+                                    class="lazyload"
+                                />
+                                <source
+                                    media="--small"
+                                    data-srcset="app/dist/assets/images/cover-DLoad-480.jpg"
+                                />
+                                <source
+                                    media="--medium"
+                                    data-srcset="app/dist/assets/images/cover-DLoad-900.jpg"
+                                />
+                                <img
+                                    class="lazyload"
+                                    data-src="app/dist/assets/images/cover-DLoad-480.jpg"
+                                    alt="DLoad Cover Image"
+                                    id="init-size"
+                                    style="min-height: 500px"
+                                />
+                            </picture>
                         </div>
                     </div>
 
                     <div
+                        class="grid grid__two grid__two-short grid__two-reverse"
+                    >
+                        <div class="project__column">
+                            <div class="project__context">
+                                <div class="title">
+                                    <h2>EliteSnap</h2>
+                                </div>
+
+                                <p class="information">
+                                    Web Dev - Oct (2017-2021)
+                                </p>
+                                <div class="description">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna
+                                        aliqua. Lorem ipsum dolor sit amet.
+                                    </p>
+                                </div>
+
+                                <a href="#" class="button button-2"
+                                    ><span>Live Website</span>
+                                    <img
+                                        data-src="app/dist/assets/icons/icon-arrow-right.svg"
+                                        alt=""
+                                        class="button--icon lazyload"
+                                        id="init-size"
+                                        style="min-height: 21px"
+                                /></a>
+                            </div>
+                        </div>
+
+                        <div class="project__column">
+                            <picture>
+                                <source
+                                    type="image/webp"
+                                    data-srcset="app/dist/assets/images/cover-EliteSnaps-900.webp"
+                                    class="lazyload"
+                                />
+                                <source
+                                    media="--small"
+                                    data-srcset="app/dist/assets/images/cover-EliteSnaps-480.jpg"
+                                />
+                                <source
+                                    media="--medium"
+                                    data-srcset="app/dist/assets/images/cover-EliteSnaps-900.jpg"
+                                />
+                                <img
+                                    class="lazyload"
+                                    data-src="app/dist/assets/images/cover-EliteSnaps-480.jpg"
+                                    alt="EliteSnaps Cover Image"
+                                    id="init-size"
+                                    style="min-height: 500px"
+                                />
+                            </picture>
+                        </div>
+                    </div>
+
+                    <!-- <div
                         class="grid grid__two grid__two-short grid__two-reverse"
                     >
                         <div class="project__column">
@@ -226,6 +268,64 @@
                                 alt=""
                             />
                         </div>
+                    </div> -->
+                    <div
+                        class="grid grid__two grid__two-short grid__two-reverse"
+                    >
+                        <div class="project__column">
+                            <div class="project__context">
+                                <div class="title">
+                                    <h2>Sacred Heart</h2>
+                                </div>
+
+                                <p class="information">
+                                    Design + Prototype - Jul 2021
+                                </p>
+                                <div class="description">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna
+                                        aliqua. Lorem ipsum dolor sit amet.
+                                    </p>
+                                </div>
+
+                                <a href="#" class="button button-2"
+                                    ><span>View Design</span>
+                                    <img
+                                        src="app/dist/assets/icons/icon-arrow-right.svg"
+                                        alt=""
+                                        class="button--icon"
+                                        id="init-size"
+                                        style="min-height: 21px"
+                                /></a>
+                            </div>
+                        </div>
+
+                        <div class="project__column">
+                            <picture>
+                                <source
+                                    type="image/webp"
+                                    data-srcset="app/dist/assets/images/cover-Sacred-900.webp"
+                                    class="lazyload"
+                                />
+                                <source
+                                    media="--small"
+                                    data-srcset="app/dist/assets/images/cover-Sacred-480.jpg"
+                                />
+                                <source
+                                    media="--medium"
+                                    data-srcset="app/dist/assets/images/cover-Sacred-900.jpg"
+                                />
+                                <img
+                                    class="lazyload"
+                                    data-src="app/dist/assets/images/cover-Sacred-480.jpg"
+                                    alt="Sacred Cover Image"
+                                    id="init-size"
+                                    style="min-height: 500px"
+                                />
+                            </picture>
+                        </div>
                     </div>
 
                     <div
@@ -255,56 +355,35 @@
                                         src="app/dist/assets/icons/icon-arrow-right.svg"
                                         alt=""
                                         class="button--icon"
+                                        id="init-size"
+                                        style="min-height: 21px"
                                 /></a>
                             </div>
                         </div>
 
                         <div class="project__column">
-                            <img
-                                data-src="app/dist/assets/sample.jpg"
-                                class="project__image lazyload"
-                                alt=""
-                            />
-                        </div>
-                    </div>
-
-                    <div
-                        class="grid grid__two grid__two-short grid__two-reverse"
-                    >
-                        <div class="project__column">
-                            <div class="project__context">
-                                <div class="title">
-                                    <h2>Sacred Heart</h2>
-                                </div>
-
-                                <p class="information">
-                                    Design + Prototype - Jul 2021
-                                </p>
-                                <div class="description">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur
-                                        adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna
-                                        aliqua. Lorem ipsum dolor sit amet.
-                                    </p>
-                                </div>
-
-                                <a href="#" class="button button-2"
-                                    ><span>View Design</span>
-                                    <img
-                                        src="app/dist/assets/icons/icon-arrow-right.svg"
-                                        alt=""
-                                        class="button--icon"
-                                /></a>
-                            </div>
-                        </div>
-
-                        <div class="project__column">
-                            <img
-                                data-src="app/dist/assets/sample.jpg"
-                                class="project__image lazyload"
-                                alt=""
-                            />
+                            <picture>
+                                <source
+                                    type="image/webp"
+                                    data-srcset="app/dist/assets/images/cover-Unwind-900.webp"
+                                    class="lazyload"
+                                />
+                                <source
+                                    media="--small"
+                                    data-srcset="app/dist/assets/images/cover-Unwind-480.jpg"
+                                />
+                                <source
+                                    media="--medium"
+                                    data-srcset="app/dist/assets/images/cover-Unwind-900.jpg"
+                                />
+                                <img
+                                    class="lazyload"
+                                    data-src="app/dist/assets/images/cover-Unwind-480.jpg"
+                                    alt="Unwind Cover Image"
+                                    id="init-size"
+                                    style="min-height: 500px"
+                                />
+                            </picture>
                         </div>
                     </div>
 
@@ -335,16 +414,35 @@
                                         src="app/dist/assets/icons/icon-arrow-right.svg"
                                         alt=""
                                         class="button--icon"
+                                        id="init-size"
+                                        style="min-height: 21px"
                                 /></a>
                             </div>
                         </div>
 
                         <div class="project__column">
-                            <img
-                                data-src="app/dist/assets/sample.jpg"
-                                class="project__image lazyload"
-                                alt=""
-                            />
+                            <picture>
+                                <source
+                                    type="image/webp"
+                                    data-srcset="app/dist/assets/images/cover-Lipas-900.webp"
+                                    class="lazyload"
+                                />
+                                <source
+                                    media="--small"
+                                    data-srcset="app/dist/assets/images/cover-Lipas-480.jpg"
+                                />
+                                <source
+                                    media="--medium"
+                                    data-srcset="app/dist/assets/images/cover-Lipas-900.jpg"
+                                />
+                                <img
+                                    class="lazyload"
+                                    data-src="app/dist/assets/images/cover-Lipas-480.jpg"
+                                    alt="Lipas Cover Image"
+                                    id="init-size"
+                                    style="min-height: 500px"
+                                />
+                            </picture>
                         </div>
                     </div>
                 </div>
@@ -391,6 +489,8 @@
                                     data-src="app/dist/assets/icons/icon-github.svg"
                                     alt="arrow icon"
                                     class="button--icon lazyload"
+                                    id="init-size"
+                                    style="min-height: 21px"
                             /></a>
                         </div>
                         <div class="project__column--short">
@@ -426,6 +526,8 @@
                                     data-src="app/dist/assets/icons/icon-github.svg"
                                     alt="arrow icon"
                                     class="button--icon lazyload"
+                                    id="init-size"
+                                    style="min-height: 21px"
                             /></a>
                         </div>
                     </div>
@@ -541,7 +643,7 @@
             <div class="hero__section hero__section--column max-width padding">
                 <div class="hero__content-max">
                     <h1 class="headline">
-                        Hey, I’m also a digital illustrator.
+                        Hey, I’m also a digital illustrator
                     </h1>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -580,6 +682,70 @@
                 </div>
             </div>
         </section>
+
+        <section class="hero__section--color min-height">
+            <div class="hero__section max-width padding">
+                <div class="hero__content-max hero__section--contact">
+                    <div class="hero__contact">
+                        <h1 class="headline">Let’s work together</h1>
+                        <p>
+                            I'm currently available for website front-end
+                            projects and mobile design. If you'd like to talk
+                            about a project, just drop me a message.
+                        </p>
+                        <br />
+
+                        <div class="hero__buttons">
+                            <a href="#design-projects" class="button"
+                                ><span>Write An Email</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero__footer">
+                        <p>Follow me for more thoughts and updates on:</p>
+
+                        <ul>
+                            <li>
+                                <a
+                                    href="http://"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Facebook</a
+                                >
+                            </li>
+                            ,
+                            <li>
+                                <a
+                                    href="http://"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >GitHub</a
+                                >
+                            </li>
+                            ,
+                            <li>
+                                <a
+                                    href="http://"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Twitter</a
+                                >
+                            </li>
+                            and
+                            <li>
+                                <a
+                                    href="http://"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    >Dribbble</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
     </body>
     <script src="app/dist/script/navbar.js" defer></script>
     <script
@@ -595,5 +761,23 @@
             '--medium': '(max-width: 900px)',
             '--large': '(max-width: 1400px)'
         };
+        const imagesInitSize = document.querySelectorAll('#init-size');
+        window.addEventListener('load', () => {
+            imagesInitSize.forEach((image) => {
+                image.removeAttribute('style');
+
+                image.addEventListener('error', () => {
+                    image.src =
+                        'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+                });
+            });
+        });
+
+        imagesInitSize.forEach((image) => {
+            image.addEventListener('error', () => {
+                image.src =
+                    'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+            });
+        });
     </script>
 </html>

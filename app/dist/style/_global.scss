@@ -75,3 +75,17 @@ img {
 :is(h1, h2, h3, h4, h5, h6) {
     font-family: $font-family-1;
 }
+
+.disable {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+    color: var(--color-black-1) !important;
+    border-color: var(--light-black-1) !important;
+    background-color: var(--light-black-1) !important;
+
+    &:hover {
+        .button--icon {
+            filter: none !important;
+        }
+    }
+}

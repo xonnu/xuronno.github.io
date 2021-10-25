@@ -56,7 +56,9 @@
                         <li><a href="#" class="active">Works</a></li>
                         <li><a href="#">Illustrations</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Email Me</a></li>
+                        <li>
+                            <a href="mailto:heychrono@outlook.com">Email Me</a>
+                        </li>
                     </ul>
                 </div>
 
@@ -71,7 +73,9 @@
                         <li><a href="#" class="active">Works</a></li>
                         <li><a href="#">Illustrations</a></li>
                         <li><a href="#">About</a></li>
-                        <li><a href="#">Email Me</a></li>
+                        <li>
+                            <a href="mailto:heychrono@outlook.com">Email Me</a>
+                        </li>
                         <li><a id="close-button">Close</a></li>
                     </ul>
                 </div>
@@ -135,7 +139,11 @@
                                     </p>
                                 </div>
 
-                                <a href="#" class="button button-2"
+                                <a
+                                    href="https://d-load.ml"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="button button-2"
                                     ><span>Live Website</span>
                                     <img
                                         src="app/dist/assets/icons/icon-arrow-right.svg"
@@ -194,7 +202,11 @@
                                     </p>
                                 </div>
 
-                                <a href="#" class="button button-2"
+                                <a
+                                    href="https://elitesnaps.co.uk"
+                                    target="_blank"
+                                    rel="noopener"
+                                    class="button button-2"
                                     ><span>Live Website</span>
                                     <img
                                         data-src="app/dist/assets/icons/icon-arrow-right.svg"
@@ -290,7 +302,9 @@
                                     </p>
                                 </div>
 
-                                <a href="#" class="button button-2"
+                                <a
+                                    class="button button-2 disable"
+                                    title="Project unavailable to view."
                                     ><span>View Design</span>
                                     <img
                                         src="app/dist/assets/icons/icon-arrow-right.svg"
@@ -349,7 +363,9 @@
                                     </p>
                                 </div>
 
-                                <a href="#" class="button button-2"
+                                <a
+                                    class="button button-2 disable"
+                                    title="Project unavailable to view."
                                     ><span>View Design</span>
                                     <img
                                         src="app/dist/assets/icons/icon-arrow-right.svg"
@@ -408,7 +424,9 @@
                                     </p>
                                 </div>
 
-                                <a href="#" class="button button-2"
+                                <a
+                                    class="button button-2 disable"
+                                    title="Project underdevelopment."
                                     ><span>View Design</span>
                                     <img
                                         src="app/dist/assets/icons/icon-arrow-right.svg"
@@ -458,11 +476,28 @@
                         <div class="project__column--short">
                             <div class="content__container">
                                 <div class="image">
-                                    <img
-                                        data-src="app/dist/assets/sample.jpg"
-                                        class="lazyload"
-                                        alt=""
-                                    />
+                                    <picture>
+                                        <source
+                                            type="image/webp"
+                                            data-srcset="app/dist/assets/images/cover-Chronobiks-900.webp"
+                                            class="lazyload"
+                                        />
+                                        <source
+                                            media="--small"
+                                            data-srcset="app/dist/assets/images/cover-Chronobiks-480.jpg"
+                                        />
+                                        <source
+                                            media="--medium"
+                                            data-srcset="app/dist/assets/images/cover-Chronobiks-900.jpg"
+                                        />
+                                        <img
+                                            class="lazyload"
+                                            data-src="app/dist/assets/images/cover-Chronobiks-480.jpg"
+                                            alt="Chronobiks Cover Image"
+                                            id="init-size"
+                                            style="min-height: 500px"
+                                        />
+                                    </picture>
                                 </div>
 
                                 <div class="title">
@@ -483,7 +518,11 @@
                                 </div>
                             </div>
 
-                            <a href="#" class="button button-2"
+                            <a
+                                href="https://github.com/heychrono/Chronobiks"
+                                target="_blank"
+                                rel="noopener"
+                                class="button button-2"
                                 >GitHub Repo
                                 <img
                                     data-src="app/dist/assets/icons/icon-github.svg"
@@ -520,7 +559,9 @@
                                 </div>
                             </div>
 
-                            <a href="#" class="button button-2"
+                            <a
+                                class="button button-2 disable"
+                                title="Coming soon."
                                 >GitHub Repo
                                 <img
                                     data-src="app/dist/assets/icons/icon-github.svg"
@@ -646,9 +687,10 @@
                         Hey, I’m also a digital illustrator
                     </h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua. Lorem ipsum dolor sit amet.
+                        As a digital illustrator, I seamlessly translate
+                        messages & ideas into appealing illustrations, and
+                        consistently take every essential aspect of creativity
+                        into account.
                     </p>
                 </div>
 
@@ -657,26 +699,26 @@
                         <div class="content__container">
                             <div class="image">
                                 <img
-                                    data-src="app/dist/assets/sample.jpg"
+                                    data-src="app/dist/assets/images/Illustration-1.jpg"
                                     class="lazyload"
-                                    alt=""
+                                    alt="Myopiangela illustration"
                                 />
                             </div>
 
-                            <p>Digital Illustration for sample</p>
+                            <p>Digital Illustration for @myopiangela</p>
                         </div>
                     </div>
                     <div class="project__column--short">
                         <div class="content__container">
                             <div class="image">
                                 <img
-                                    data-src="app/dist/assets/sample.jpg"
+                                    data-src="app/dist/assets/images/Illustration-2.jpg"
                                     class="lazyload"
-                                    alt=""
+                                    alt="Hatsunenica illustration"
                                 />
                             </div>
 
-                            <p>Digital Illustration for sample</p>
+                            <p>Digital Illustration for @hatsunenica</p>
                         </div>
                     </div>
                 </div>
@@ -696,7 +738,9 @@
                         <br />
 
                         <div class="hero__buttons">
-                            <a href="#design-projects" class="button"
+                            <a
+                                href="mailto:heychrono@outlook.com"
+                                class="button"
                                 ><span>Write An Email</span>
                             </a>
                         </div>
@@ -708,7 +752,7 @@
                         <ul>
                             <li>
                                 <a
-                                    href="http://"
+                                    href="http://facebook.com/heychrono"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     >Facebook</a
@@ -717,7 +761,7 @@
                             ,
                             <li>
                                 <a
-                                    href="http://"
+                                    href="http://github.com/heychrono"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     >GitHub</a
@@ -726,7 +770,7 @@
                             ,
                             <li>
                                 <a
-                                    href="http://"
+                                    href="http://twitter.com/heycrhonoo"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     >Twitter</a
@@ -735,7 +779,7 @@
                             and
                             <li>
                                 <a
-                                    href="http://"
+                                    href="https://dribbble.com/heychrono/about"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     >Dribbble</a

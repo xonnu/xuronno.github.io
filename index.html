@@ -4,12 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
   <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" as="font" onload="this.onload=null;this.rel='stylesheet';this.removeAttribute('as')" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    as="font" onload="this.onload=null;this.rel='stylesheet';this.removeAttribute('as')" />
   <noscript>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </noscript>
@@ -21,6 +24,8 @@
   <meta name="description" content="Turning concepts
   into reality visual
   designs.">
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -39,11 +44,12 @@
   into reality visual
   designs.">
   <meta property="twitter:image" content="https://heychrono.me/assets/og-image.png">
+  <meta name="theme-color" content="#000">
   <link rel="prefetch" href="assets/logo/logo-480.webp" as="image">
   <link rel="prefetch" href="assets/logo/logo-480.png" as="image">
-  <script type="module" crossorigin src="assets/index.284c3a76.js"></script>
+  <script type="module" crossorigin src="assets/index.b15de017.js"></script>
   <link rel="modulepreload" href="assets/vendor.85c6765f.js">
-  <link rel="stylesheet" href="assets/index.72bc43c3.css">
+  <link rel="stylesheet" href="assets/index.3cf4f68d.css">
 </head>
 
 <body>
@@ -52,11 +58,14 @@
     <section class="max-container">
       <div class="min-h-auto py-10 md:min-h-[600px] md:py-0 bg-white flex flex-col items-center justify-center">
         <p class="block w-full text-base md:text-lg text-black mb-3 md:mb-4">Justin Raniel, Visual Designer</p>
-        <h2 class="transition-all text-black block w-full font-bold text-4xl leading-[45px] md:text-7xl md:leading-[80px]">Turning concepts <br class="hidden md:block">into reality visual<br class="hidden md:block"> designs.</h2>
+        <h2
+          class="transition-all text-black block w-full font-bold text-4xl leading-[45px] md:text-7xl md:leading-[80px]">
+          Turning concepts <br class="hidden md:block">into reality visual<br class="hidden md:block"> designs.</h2>
         <div class="flex flex-wrap w-full h-auto mt-10 gap-4">
           <button role="button" class="button flex flex-row gap-4">
             <span>Design Works</span>
-            <img width="20" height="20" decoding="async" src="assets/icons/arrow.svg" class="button-icon animate-bounce" alt="arrow down icon">
+            <img width="20" height="20" decoding="async" src="assets/icons/arrow.svg" class="button-icon animate-bounce"
+              alt="arrow down icon">
           </button>
           <button role="button" class="button" disabled>Download Resume</button>
         </div>
@@ -67,5 +76,16 @@
   <main id="app"></main>
   
 </body>
-<script>document.querySelector('#pre-render').innerHTML = '';</script>
+<script src="service-worker.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register("service-worker.js").then(registration => {}).catch(error => {
+      console.log(error)
+    })
+  }
+</script>
+<script>
+  document.querySelector('#pre-render').innerHTML = '';
+</script>
+
 </html>
